@@ -5,12 +5,11 @@ import Rocket from './Rocket';
 
 const Home = () => {
   const dispatch = useDispatch();
+  const rocketsList = useSelector((state) => state.rocketsReducer);
 
   useEffect(() => {
-    dispatch(getRocketsAPI());
+    if (rocketsList.length === 0) dispatch(getRocketsAPI());
   }, []);
-
-  const rocketsList = useSelector((state) => state.rocketsReducer);
 
   return (
     <section className="page__section">
