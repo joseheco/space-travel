@@ -3,7 +3,7 @@ import { composeWithDevTools } from '@redux-devtools/extension';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import rocketsReducer from './rockets/rocketsReducer';
-import missionsReducer from './missions/missions';
+import missionsReducer from './missions/missionsReducer';
 
 const rootReducer = combineReducers({
   rocketsReducer,
