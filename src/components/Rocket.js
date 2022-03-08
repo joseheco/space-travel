@@ -1,25 +1,13 @@
 import { PropTypes } from 'prop-types';
-import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setRocketReserved } from '../redux/rockets/rocketsReducer';
+import { setRocketReserved, setRocketUnreserved } from '../redux/rockets/rocketsReducer';
 
 const Rocket = ({ rocket }) => {
-  const [reservedFlagStyle, setResevedFlagStyle] = useState('');
-  const [bookingBtnStyle, setBookingBtnStyle] = useState('btn-blue');
-  const [bookingState, setBookingState] = useState('Reserve Rocket');
-
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (rocket.reserved) {
-      setResevedFlagStyle('ele-active');
-      setBookingBtnStyle('btn-cancel');
-      setBookingState('Cancel Reservation');
-    }
-  });
-
-  const makeReservation = (e) => {
-    dispatch(setRocketReserved(+e.target.dataset.id));
+  const toogleReservation = (e) => {
+    if (!rocket.reserved) dispatch(setRocketReserved(+e.target.dataset.id));
+    else dispatch(setRocketUnreserved(+e.target.dataset.id));
   };
 
   return (
@@ -30,10 +18,9 @@ const Rocket = ({ rocket }) => {
       <div className="list__item-details">
         <h2>{rocket.rocket_name}</h2>
         <p>
-          <span className={'reserved-flag '.concat(reservedFlagStyle)}>Reserved</span>
           {rocket.description}
         </p>
-        <button type="button" className={bookingBtnStyle} data-id={rocket.id} onClick={makeReservation}>{bookingState}</button>
+        <button type="button" className="btn-blue" data-id={rocket.id} onClick={toogleReservation}>Reserve Rocket</button>
       </div>
     </li>
   );
