@@ -42,13 +42,6 @@ const rocketsReducer = (state = initializeState, action) => {
         return obj;
       });
     }
-    case SET_ROCKETS_UNRESERVED: {
-      const newState = state.map((obj) => {
-        if (obj.id === action.payload) return { ...obj, reserved: false };
-        return obj;
-      });
-      return newState;
-    }
     default:
       return state;
   }
