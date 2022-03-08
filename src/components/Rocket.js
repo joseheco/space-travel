@@ -18,9 +18,14 @@ const Rocket = ({ rocket }) => {
       <div className="list__item-details">
         <h2>{rocket.rocket_name}</h2>
         <p>
+          {rocket.reserved ? (<span className="booking-badge">Reserved</span>) : null}
           {rocket.description}
         </p>
-        <button type="button" className="btn-blue" data-id={rocket.id} onClick={toogleReservation}>Reserve Rocket</button>
+        <button type="button" className={rocket.reserved ? 'btn-cancel' : 'btn-blue'} data-id={rocket.id} onClick={toogleReservation}>
+          {
+            rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'
+          }
+        </button>
       </div>
     </li>
   );
