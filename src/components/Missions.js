@@ -1,24 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchDataRequest } from '../redux/missions/missionsReducer';
 
-const Missionlist = () => (
-  <div>
-    <table>
-      <tr>
-        <th>
-          Missions
-        </th>
-        <th>
-          description
-        </th>
-        <th>
-          Status
-        </th>
-        <th>
-          Contect
-        </th>
-      </tr>
-    </table>
-  </div>
-);
+const MissionsRender = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchDataRequest());
+  }, []);
+  return (
+    <>
+    </>
+  );
+};
 
-export default Missionlist;
+export default MissionsRender;
