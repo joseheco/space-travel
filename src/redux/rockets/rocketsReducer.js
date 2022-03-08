@@ -31,11 +31,16 @@ const rocketsReducer = (state = initializeState, action) => {
     case GET_ROCKETS_FROM_API:
       return action.payload;
     case SET_ROCKETS_RESERVED: {
-      const newState = state.map((obj) => {
+      return state.map((obj) => {
         if (obj.id === action.payload) return { ...obj, reserved: true };
         return obj;
       });
-      return newState;
+    }
+    case SET_ROCKETS_UNRESERVED: {
+      return state.map((obj) => {
+        if (obj.id === action.payload) return { ...obj, reserved: false };
+        return obj;
+      });
     }
     case SET_ROCKETS_UNRESERVED: {
       const newState = state.map((obj) => {
