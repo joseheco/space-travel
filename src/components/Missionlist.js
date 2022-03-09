@@ -4,21 +4,12 @@ import { PropTypes } from 'prop-types';
 
 const MissionsList = ({ id, name, description }) => (
   <>
-    <table className="table">
-      <thead>
-        <tr>
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr key={id}>
-          <td>{name}</td>
-          <td>{description}</td>
-        </tr>
-      </tbody>
-    </table>
+    <tbody>
+      <tr key={id}>
+        <td>{name}</td>
+        <td>{description}</td>
+      </tr>
+    </tbody>
   </>
 );
 

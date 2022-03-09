@@ -14,6 +14,13 @@ const Missions = () => {
   return (
     <div>
       <table>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
         <tbody>
           {
             missionRender.map((mission) => (
