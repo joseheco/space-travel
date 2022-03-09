@@ -10,11 +10,11 @@ const MissionsList = ({
   joined,
 }) => {
   const dispatch = useDispatch();
-  const btnJoin = () => {
+  const btnjoin = () => {
     dispatch(joinMission(id));
   };
 
-  const btnLeave = () => {
+  const btnleave = () => {
     dispatch(leaveMission(id));
   };
 
@@ -34,7 +34,7 @@ const MissionsList = ({
           {joined ? (
             <button
               type="button"
-              onClick={btnLeave}
+              onClick={btnleave}
             >
               Leave Mission
             </button>
