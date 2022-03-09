@@ -18,11 +18,11 @@ nav {
   }
   .nav-link {
     text-decoration: none;
-    color: $gray-dark;
+    color: $accent-light;
     font-size: 15px;
     font-weight: bold;
     &.active {
-      color: $dark;
+      color: $accent;
     }
   }
   ul {
