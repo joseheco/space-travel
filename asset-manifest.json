@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/space-travel/static/css/main.2a9d1359.css",
+    "main.js": "/space-travel/static/js/main.6328b310.js",
+    "static/media/planet.png": "/space-travel/static/media/planet.3f6fb2742f28651730c0.png",
+    "index.html": "/space-travel/index.html",
+    "main.2a9d1359.css.map": "/space-travel/static/css/main.2a9d1359.css.map",
+    "main.6328b310.js.map": "/space-travel/static/js/main.6328b310.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2a9d1359.css",
+    "static/js/main.6328b310.js"
+  ]
+}
