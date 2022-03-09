@@ -5,6 +5,8 @@ nav {
   height: 60px;
   background-color: white;
   padding: 1rem 5%;
+  box-shadow: 0px 3px 3px rgba($gray-dark, $alpha: 0.3);
+
   .brand {
     display: flex;
     align-items: center;
