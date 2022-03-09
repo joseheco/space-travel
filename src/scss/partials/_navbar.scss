@@ -5,6 +5,8 @@ nav {
   height: 60px;
   background-color: white;
   padding: 1rem 5%;
+  box-shadow: 0 3px 3px rgba($gray-dark, $alpha: 0.3);
+
   .brand {
     display: flex;
     align-items: center;
@@ -12,24 +14,31 @@ nav {
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
+
     .logo-img {
       height: 50px;
     }
   }
+
   .nav-link {
     text-decoration: none;
-    color: $gray-dark;
+    color: $accent-light;
     font-size: 15px;
     font-weight: bold;
+
     &.active {
-      color: $dark;
+      color: $accent;
     }
   }
+
   ul {
     list-style: none;
+
     @include flex-row;
+
     li {
       padding: 0 1rem;
+
       &:last-child {
         border-left: 1px solid $gray-dark;
       }

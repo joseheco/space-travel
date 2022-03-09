@@ -34,15 +34,25 @@ body {
     padding: 1.5rem 5%;
     border-bottom: 1px solid rgba($gray-dark, 0.5);
 
+    @include flex-column;
+
     &:last-of-type {
       border-bottom: none;
+    }
+
+    @include mq($mw:48rem) {
+      @include flex-row;
+
+      > * {
+        align-self: flex-start;
+      }
     }
   }
 
   button {
     width: 130px;
-    padding: 0.5rem 1rem;
-    
+    padding: 0.3rem 1rem;
+
     @include font;
 
     font-weight: 400;
@@ -52,6 +62,7 @@ body {
   }
 
   .btn-blue {
+    width: 140px;
     background-color: $accent;
     border: 1px solid $accent;
     color: $white;
@@ -64,6 +75,7 @@ body {
   }
 
   .btn-cancel {
+    width: 140px;
     background-color: transparent;
     border: 1px solid $gray-dark;
     color: $gray-dark;
