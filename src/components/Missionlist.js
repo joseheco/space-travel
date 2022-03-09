@@ -11,11 +11,11 @@ const MissionsList = ({
   reserved,
 }) => {
   const dispatch = useDispatch();
-  const handleJoinMission = () => {
+  const btnjoin = () => {
     dispatch(joinMission(id));
   };
 
-  const handleLeaveMission = () => {
+  const btnleave = () => {
     dispatch(leaveMission(id));
   };
 
@@ -35,14 +35,14 @@ const MissionsList = ({
           {reserved ? (
             <button
               type="button"
-              onClick={handleLeaveMission}
+              onClick={btnleave}
             >
               Leave Mission
             </button>
           ) : (
             <button
               type="button"
-              onClick={handleJoinMission}
+              onClick={btnjoin}
             >
               Join Mission
             </button>
