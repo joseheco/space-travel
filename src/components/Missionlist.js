@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
@@ -8,14 +7,14 @@ const MissionsList = ({
   id,
   name,
   description,
-  reserved,
+  joined,
 }) => {
   const dispatch = useDispatch();
-  const handleJoinMission = () => {
+  const btnJoin = () => {
     dispatch(joinMission(id));
   };
 
-  const handleLeaveMission = () => {
+  const btnLeave = () => {
     dispatch(leaveMission(id));
   };
 
@@ -25,24 +24,24 @@ const MissionsList = ({
         <td>{name}</td>
         <td>{description}</td>
         <td>
-          {reserved ? (
-            <span className="active-member">Active Member</span>
+          {joined ? (
+            <span>Active Member</span>
           ) : (
             <span>NOT A MEMBER</span>
           )}
         </td>
         <td>
-          {reserved ? (
+          {joined ? (
             <button
               type="button"
-              onClick={handleLeaveMission}
+              onClick={btnLeave}
             >
               Leave Mission
             </button>
           ) : (
             <button
               type="button"
-              onClick={handleJoinMission}
+              onClick={btnJoin}
             >
               Join Mission
             </button>
@@ -56,7 +55,7 @@ MissionsList.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
+  joined: PropTypes.bool.isRequired,
 };
 
 export default MissionsList;
