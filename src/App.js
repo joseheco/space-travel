@@ -7,17 +7,16 @@ import {
 } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
-import MissionsRender from './components/Missions';
-import Missionlist from './components/Missionlist';
+import Profile from './components/Profile';
+import Missions from './components/Missions';
 
 const App = () => (
   <BrowserRouter>
     <Header />
-    <MissionsRender />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Missions" element={<Missionlist />} />
-      <Route path="/profile" />
+      <Route path="/missions" element={<Missions />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   </BrowserRouter>
 );
