@@ -33,19 +33,18 @@ body {
     width: 100%;
     padding: 1.5rem 5%;
     border-bottom: 1px solid rgba($gray-dark, 0.5);
-    @include flex-column;
 
+    @include flex-column;
 
     &:last-of-type {
       border-bottom: none;
     }
 
     @include mq($mw:48rem) {
-
       @include flex-row;
 
       > * {
-        align-self: flex-start
+        align-self: flex-start;
       }
     }
   }
@@ -53,7 +52,7 @@ body {
   button {
     width: 130px;
     padding: 0.3rem 1rem;
-    
+
     @include font;
 
     font-weight: 400;
