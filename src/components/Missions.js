@@ -19,8 +19,7 @@ const Missions = () => {
           <tr>
             <th>Mission</th>
             <th>Description</th>
-            <th>Status</th>
-            <th>Content</th>
+            <th>Status</th> 
           </tr>
         </thead>
         <tbody>
