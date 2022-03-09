@@ -2,14 +2,14 @@ const JOIN_MISSION = 'JOIN_MISSION';
 const LEAVE_MISSION = 'LEAVE_MISSION';
 const FETCH_MISSION = 'FETCH_MISSION';
 
-const joinMission = (payload) => ({
+const joinMission = (id) => ({
   type: JOIN_MISSION,
-  payload,
+  id,
 });
 
-const leaveMission = (payload) => ({
+const leaveMission = (id) => ({
   type: LEAVE_MISSION,
-  payload,
+  id,
 });
 
 const fetchMissions = (payload) => ({
@@ -34,12 +34,26 @@ const initialState = [];
 
 const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case JOIN_MISSION:
-      return [...state, action.payload];
-    case LEAVE_MISSION:
-      return state.filter((mission) => mission.item_id !== action.payload);
     case FETCH_MISSION:
-      return [...action.payload];
+      return action.payload;
+    case JOIN_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.id === action.id) {
+          return { ...mission, joined: true };
+        }
+        return mission;
+      });
+      return newState;
+    }
+    case LEAVE_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.id === action.id) {
+          return { ...mission, joined: false };
+        }
+        return mission;
+      });
+      return newState;
+    }
     default:
       return state;
   }

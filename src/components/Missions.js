@@ -6,12 +6,12 @@ import './Missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
+  const missionRender = useSelector((state) => state.missionsReducer);
 
   useEffect(() => {
-    dispatch(fetchMissionApi());
+    if (missionRender.length === 0) dispatch(fetchMissionApi());
   }, []);
 
-  const missionRender = useSelector((state) => state.missionsReducer);
   return (
     <div>
       <table>
@@ -19,8 +19,7 @@ const Missions = () => {
           <tr>
             <th>Mission</th>
             <th>Description</th>
-            <th>Status</th>
-            <th>Content</th>
+            <th>Status</th> 
           </tr>
         </thead>
         <tbody>
@@ -31,6 +30,7 @@ const Missions = () => {
                 id={mission.id}
                 name={mission.name}
                 description={mission.description}
+                joined={mission.joined}
               />
             ))
           }
