@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMissionApi } from '../redux/missions/missionsReducer';
 import MissionsList from './Missionlist';
+import './Missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,14 @@ const Missions = () => {
   return (
     <div>
       <table>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Content</th>
+          </tr>
+        </thead>
         <tbody>
           {
             missionRender.map((mission) => (
