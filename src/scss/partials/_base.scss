@@ -40,10 +40,9 @@ body {
   }
 
   button {
-    width: 100%;
-    max-width: 150px;
+    width: 130px;
     padding: 0.5rem 1rem;
-
+    
     @include font;
 
     font-weight: 400;

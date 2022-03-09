@@ -25,14 +25,19 @@ const MissionsList = ({
         <td>{description}</td>
         <td>
           {joined ? (
-            <span>Active Member</span>
+            <div className="status active">
+              <span>ACTIVE MEMBER</span>
+            </div>
           ) : (
-            <span>NOT A MEMBER</span>
+            <div className="status not-active">
+              <span>NOT A MEMBER</span>
+            </div>
           )}
         </td>
         <td>
           {joined ? (
             <button
+              className="btnleave"
               type="button"
               onClick={btnleave}
             >
@@ -40,8 +45,9 @@ const MissionsList = ({
             </button>
           ) : (
             <button
+              className="btnjoin"
               type="button"
-              onClick={btnJoin}
+              onClick={btnjoin}
             >
               Join Mission
             </button>

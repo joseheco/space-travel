@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMissionApi } from '../redux/missions/missionsReducer';
 import MissionsList from './Missionlist';
-import './Missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -13,13 +12,14 @@ const Missions = () => {
   }, []);
 
   return (
-    <div>
+    <section>
       <table>
         <thead>
           <tr>
             <th>Mission</th>
             <th>Description</th>
-            <th>Status</th> 
+            <th>Status</th>
+            <th>{}</th>
           </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@ const Missions = () => {
           }
         </tbody>
       </table>
-    </div>
+    </section>
   );
 };
 
