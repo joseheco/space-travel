@@ -51,11 +51,14 @@ const MissionsList = ({
     </>
   );
 };
+
+MissionsList.defaultProps = { joined: false };
+
 MissionsList.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  joined: PropTypes.bool.isRequired,
+  joined: PropTypes.bool,
 };
 
 export default MissionsList;
