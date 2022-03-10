@@ -1,0 +1,75 @@
+.rocket__list {
+  list-style: none;
+
+  .rocket__list-item {
+    @include flex-column;
+
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid rgba($gray-dark, 0.25);
+    background-color: $white;
+
+    > * {
+      margin-bottom: 1.5rem;
+
+      @include flex-column;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .list__item-image {
+      width: 100%;
+      max-width: 200px;
+
+      img {
+        width: inherit;
+        max-width: inherit;
+        height: auto;
+      }
+    }
+
+    .list__item-details {
+      > * {
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .booking-badge {
+        background-color: $green;
+        padding: 0.15rem 0.25rem;
+        border-radius: 5px;
+        margin-right: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: white;
+      }
+    }
+
+    @include mq ($mw:43.75rem) {
+      padding: 1rem 2rem;
+
+      @include flex-row;
+      @include flex-center;
+
+      > * {
+        width: auto;
+        padding-right: 1rem;
+        margin-bottom: 0;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      .list__item-details {
+        width: calc(100% - 200px);
+      }
+    }
+  }
+}
