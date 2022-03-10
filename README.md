@@ -30,7 +30,7 @@ The website displays space rockets and missions from a third-part API:
 - SASS
 - Webpack
 
-## Live Demo (if available)
+## Live Demo
 
 [Space travel](https://joseheco.github.io/space-travel/)
 
