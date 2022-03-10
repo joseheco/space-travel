@@ -15,7 +15,7 @@ const Home = () => {
     <section className="page__section">
       <ul className="rocket__list">
         {
-          rocketsList && rocketsList.map((rocket) => <Rocket key={rocket.id} rocket={rocket} />)
+          rocketsList.map((rocket) => <Rocket key={rocket.id} rocket={rocket} />)
         }
       </ul>
     </section>
